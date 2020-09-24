@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            split: 将字符串按照分割符分割数组，返回结果是个数组
+            字符串.split('分割符');  分割符可以是一切字符
+
+            join: 将数组的每一项按照连接符连接成字符串，返回结果是个字符串
+            数组.join('连接符'); 连接符可以是一切字符
+        */
+        var str = '123451234512345';
+        var arr = str.split('12');
+        // var arr = str.split(''); // 每两个字符中间都有一个空字符
+        // var arr = str.split(); // 整个作为一项
+        console.log(arr);
+        // ["345345345"]
+        var str1 = arr.join('-');
+        var str1 = arr.join('abcd'); // abcd345abcd345abcd345
+        var str1 = arr.join(''); // 345345345
+        var str1 = arr.join(); // ,345,345,345
+        console.log(str1);
+    </script>
+</body>
+</html>

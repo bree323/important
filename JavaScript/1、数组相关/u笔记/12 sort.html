@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            数组.sort(); 操作是原数组
+            如果是两位以上的数字进行比较，按照字符串的比较方式，比较ASCII码值，从左往右依次比较
+
+            数组.sort(函数);
+            函数中有2个参数:
+                return 第一个 - 第二个参数; 返回从小到大的排序
+                return 第二个 - 第一个参数; 返回从大到小的排序
+        */
+        var arr = [14, 2, 3, 25, 26, 7, 1];
+        arr.sort();
+        console.log(arr); // [1, 14, 2, 25, 26, 3, 7]
+
+        arr.sort(function(x, y){
+            console.log('x----' +x, y);
+            return y - x;
+            return x - y;
+        });
+        console.log(arr); // 
+
+    </script>
+</body>
+</html>

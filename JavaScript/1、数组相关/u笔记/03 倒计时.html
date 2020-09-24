@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="2020">年
+    <input type="text" value="6">月
+    <input type="text" value="20">日
+    <button>开始</button>
+    <p>距离xx年xx月xx日还有:</p>
+    <p>xx天xx小时xx分钟xx秒</p>
+    <script>
+        // 点击开始按钮, 根据输入的时间开始倒计时
+        // 获取元素, input button p
+        var btns = document.getElementsByTagName('button')[0];
+        var inp = document.getElementsByTagName('input');
+        var ps = document.getElementsByTagName('p');
+        console.log(btns, inp, ps);
+        // 添加事件
+        btns.onclick = function () {
+            moveTime();
+            // 开启倒计时
+            setInterval(moveTime, 1000);
+        }
+        function moveTime() {
+                // 当前时间  未来时间
+                var date = new Date();
+                var future = new Date(inp[0].value, inp[1].value - 1, inp[2].value);
+                console.log(date, future);
+                var time = parseInt((future.getTime() - date.getTime()) / 1000);
+                // console.log(time);
+                // 超过60s就是1分钟，超过60分钟，就是1小时，超过24小时就是1天， 整天计算的天数
+                var ss = time % 60;
+                var mm = parseInt((time / 60) % 60);
+                var hh = parseInt(time / 60 / 60 % 24);
+                var dd = parseInt(time / 60 / 60 / 24);
+
+                ss = add0(ss);
+                mm = add0(mm);
+                hh = add0(hh);
+                dd = add0(dd);
+                ps[1].innerHTML = dd + '天' + hh + '小时' + mm + '分' + ss + '秒';
+            }
+        function add0(time) {
+            if (time <= 9) {
+                time = '0' + time;
+            } else {
+                time = time;
+            }
+            return time;
+        }
+    </script>
+</body>
+
+</html>

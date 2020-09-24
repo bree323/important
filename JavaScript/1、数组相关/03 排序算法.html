@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 排序算法</title>
+</head>
+<body>
+    
+    <script>
+        const arr = [2,1,0,-1,3,-2]
+    //   1、选择排序:每次取出来一个值和它后面的每一个值进行比较, 前面的比后面的大就互换位置
+                    //每次比较得到最小的
+         /*  for(var i =0; i<arr.length; i++) {
+              for(var j = i+1; j < arr.length; j++) {
+                  if(arr[i] > arr[j]) {
+                      var temp = arr[i]
+                      arr[i] =  arr[j]
+                      arr[j] = temp
+                      console.log(temp)
+                  }
+              }
+          } */
+          
+
+
+    //  2、 冒泡排序: 每次用相邻的两个值去进行比较, 如果说前面的比后面的大就互换位置, 
+                      //每次排出最大的
+         /*  for(var i = 0; i<arr.length; i++) {
+              for(var j = 0; j < arr.length - i -1; j++) {   //每循环i次，就会排出i个最大值，当前循环排出一个最大值，所以j < arr.length - i -1
+                  if(arr[j] > arr[j+1]) {
+                      var temp = arr[j]
+                      arr[j] = arr[j+1]
+                      arr[j+1] = temp
+                  }
+              }
+          }
+ */
+    // 3、快速排序
+    function quickselect(arr) {
+        //递归结束条件
+        if(arr.length <= 1) {
+            return arr
+        }
+       //找到数组中间项
+       let num = Math.floor(arr.length / 2) 
+       let numval = arr.splice(num, 1)     
+
+       let leftarr = []
+       let rightarr = []
+    //    console.log(numval) 
+        arr.forEach(item => {
+            if(item < numval) {
+                leftarr.push(item)
+            } else{
+                rightarr.push(item)
+            }
+        })
+        return quickselect(leftarr).concat(numval, quickselect(rightarr))
+    }
+ 
+         let newarr1 = quickselect(arr)
+         console.log(newarr1)
+
+    </script>
+</body>
+</html>

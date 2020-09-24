@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            js的对象分类: 
+                原生对象: Sting\Number\Boolean Object\Array\Function Error\RegExp\Date
+                内置对象: Global(全局, window, document) Math
+                宿主对象: DOM BOM
+                全局对象: window
+            数组: 是值得有序的集合; 用于存储不定数量不定类型的数据。
+            索引: 下标  元素: 下标对应的值
+
+            声明方式: 
+            1. 字面量声明法: var 变量名 = [];
+            2. 构造函数声明: var 变量名 = new Array();
+        */
+        var arr = new Array(); // 空数组
+        console.log(arr);
+        var arr = new Array(1, 2, 3); // 多个元素之间用,隔开
+        console.log(arr);
+        var arr = new Array(4); // 只写了一个值，并且还是数字的时候, 这个数字表示数组的长度, 存对应个数的empty
+        console.log(arr);
+        console.log(arr[1]); // undefined
+    </script>
+</body>
+</html>

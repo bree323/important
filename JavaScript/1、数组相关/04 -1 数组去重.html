@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重（网）</title>
+</head>
+
+<body>
+    <script>
+        // 方法1：利用对象的属性不会重复这一特性，首先创建一个空对象，
+            // 然后用 for 循环遍历，来校验数组元素是否重复。
+        let a = [0, 1, 1, 2, 3, 4, 4, 4];
+        let result = [];
+        let obj = {};
+        for (let i of a) {
+            if (!obj[i]) {
+                result.push(i);
+                obj[i] = 1;
+            }
+        }
+        Object.keys(obj)
+console.log(result)
+    </script>
+</body>
+
+</html>

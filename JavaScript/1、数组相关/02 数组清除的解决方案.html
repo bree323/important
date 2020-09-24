@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 数组清除的解决方案</title>
+</head>
+   
+
+
+<body>
+    <button id="btn">清空数组</button>
+
+     <script>
+
+        let btn = document.getElementById('btn')
+        let arr = [1,'a','b',4,'5']
+       btn.onclick = function () {
+        console.log('清空前---', arr)
+        //   arr.length = 0     //方法1： 利用数组打的长度属性清空  但vue中好像性能不怎么好，有点失灵
+        // arr = []             //方法2： 直接通过改变值   vue中能达到删除效果，但是会有一个报错，不建议直接改变值
+        // arr.splice(0,arr.length)   //方法3： 通过splice方法删除  vue里能到达效果，且没有报错
+
+        /*  arr.forEach(item => {
+            arr.pop()
+            console.log('清空中----', arr, item)
+        })     */    //不能删除， 仔细判断这个方法的删除顺序（从前往后遍历，从后往前删除）
+        /* arr.forEach(item => {
+            arr.shift()
+            console.log('清空中----', arr, item)
+        })  */       //不能删除， 
+        
+
+        
+           console.log('清空后----', arr)
+       }
+  
+
+
+
+
+
+
+     </script> 
+
+
+
+
+</body>
+</html>

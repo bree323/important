@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            递归函数: 自己函数内部调用自己 必须要有结束条件
+        */
+        // move(10);
+        // function move(n){
+        //     n--;
+        //     if(n == 0){
+        //         return;
+        //     }
+        //     console.log(n);
+        //     move(n);
+        // }
+
+        var array = [13, 0, 7, 9, 14, -4, 26, 32, 1.2];   
+        var m = quickSort(array);
+            console.log(m);
+        function quickSort(arr) {
+            // 结束条件
+            if(arr.length <= 1){
+                return arr;
+            }
+            // 先找到中间项的下标
+            var num = Math.floor(arr.length / 2);
+            // 找到中间项
+            var numValue = arr[num];
+            // 去掉自身中间项
+            arr.splice(num, 1);
+            console.log({numValue, arr});
+            // 左边数组  右边数组
+            var leftArr = [];
+            var rightArr = [];
+            // 将每一个数组中的项和中间项进行比较, 比它小的放在左边数组，比他大的放在右边数组
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < numValue) {
+                    leftArr.push(arr[i]);
+                } else {
+                    rightArr.push(arr[i]);
+                }
+            }
+            console.log({leftArr, rightArr});
+
+            // quickSort(leftArr);
+            // quickSort(rightArr);
+            
+            return quickSort(leftArr).concat(numValue, quickSort(rightArr));
+            // var a = leftArr.concat(numValue, rightArr);
+            // console.log(a);
+        }
+    </script>
+</body>
+
+</html>

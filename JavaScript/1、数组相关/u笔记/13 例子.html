@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //按date进行降序排序，如果date一样，按DIU进行降序排序
+        var arr = [
+            { "date": "2018-08-01", "DIU": 1209, "country": "US" },
+            { "date": "2019-08-02", "DIU": 6801, "country": "GB" },
+            { "date": "2018-08-01", "DIU": 2311, "country": "CN" },
+            { "date": "2018-08-02", "DIU": 879, "country": "US" },
+            { "date": "2018-08-03", "DIU": 15225, "country": "CN" },
+            { "date": "2018-08-02", "DIU": 1525, "country": "CN" }
+        ];
+        // Date.parse('时间字符串'): 得到毫秒--时间戳
+        arr.sort(function(a, b){
+            // 获取a、b对象中的时间
+            console.log(Date.parse(a.date));
+            console.log(Date.parse(b.date));
+            // 判断a、b的时间相同的时候，返回diu排序
+            if(Date.parse(a.date) == Date.parse(b.date)){
+                return b.DIU - a.DIU;
+            }
+            return Date.parse(b.date) - Date.parse(a.date);
+        });
+        console.log(arr);
+    </script>
+</body>
+
+</html>

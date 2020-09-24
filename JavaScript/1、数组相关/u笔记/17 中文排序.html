@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            中文排序: 对比数据.localeCompare(要对比的数据, 'zh');
+        */
+        var arr = [
+            {'name': 'z亚索', 'tips': 60},
+            {'name': '提莫', 'tips': 70},
+            {'name': '盲僧', 'tips': 80},
+            {'name': 'f亚瑟', 'tips': 80},
+            {'name': '发条', 'tips': 90},
+            {'name': '狗头', 'tips': 35}
+        ];
+        arr.sort(function(a,b){
+            console.log(a.name.localeCompare(b.name, 'zh'));
+            // return a.name - b.name;
+            return a.name.localeCompare(b.name, 'zh');
+        });
+        console.log(arr);
+    </script>
+</body>
+</html>

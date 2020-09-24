@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            1. 定时器的分类及使用
+                延时定时器: setTimeout(函数, 时间)  广告、延迟动画
+                间隔定时器: setInterval(函数, 时间) 倒计时、计时器、轮播图
+            2. 字符串的方法有哪些？
+                substring\slice\substr\toLowerCase\toUpperCase\indexOf\lastIndexOf\charAt\charCodeAt
+            3. 数学方法有哪些？
+                Math.ceil  Math.floor Math.round Math.random Math.abs 
+                Math.sqrt Math.pow Math.max Math.min
+            4. 截取字符串“abcdefg”中的def;
+                var str = 'abcdefg';
+                console.log(str.slice(3, 6))
+            5. 获取非行间样式函数
+                function getStyle(elem, attr){
+                    if(window.getComputedStyle){
+                        return getComputedStyle(elem)[attr];
+                    } else {
+                        return elem.currentStyle[attr];
+                    }
+                }
+            6. 什么是作用域？
+                函数、变量作用的区域，分为局部作用域和全局作用域
+            7. var a = 10; var b = ++a + a++ + ++a + a; a,b分别是多少？
+            8. 谈谈对this对象的理解？
+                全页面
+                全局---window  普通--window 事件处理---触发源
+            9. 运算符的种类？
+                算术
+                赋值
+                比较
+                逻辑
+                三目
+            10. window.onload的作用？
+                等待页面及资源加载完成后在执行其中的代码
+        */
+        var a = 10;
+        var b = ++a + a++ + ++a + a; // 11 + 11 + 13 + 13
+        console.log(a, b); // 13, 48
+    </script>
+</body>
+</html>

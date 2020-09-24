@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <input type="text"><em>不区分大小写</em><br>
+    <button>验证</button>
+    <script>
+        var p = document.getElementsByTagName('p')[0];
+        var str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        // 刷新页面, 获取6个随机字符
+        var code = ''
+        // 每一个字符都是随机获取的
+        for(var i = 1; i <= 6; i++){
+            // 字符通过下标获取 随机下标  范围: 0-字符串长度
+            var num = Math.floor(Math.random() * str.length);
+            // console.log(num);
+            // 取出随机字符
+            // console.log(str[num]);
+            p.innerHTML += str[num];
+        }
+
+        // 点击验证, 判断输入框的内容是否与验证码相同
+        // 获取元素: input button p
+        var btn = document.getElementsByTagName('button')[0];
+        var inp = document.getElementsByTagName('input')[0];
+        // 添加事件
+        btn.onclick = function(){
+            // 判断输入框的内容是否与验证码相同
+            // 输入框的内容  验证码
+            console.log(inp.value, p.innerText);
+            // 乎略大小写---要么都是大写要么都是小写
+            // 输入框的大写 == 验证码的大写
+            if(inp.value.toUpperCase() == p.innerText.toUpperCase()){
+                alert('验证成功')
+            } else {
+                alert('输入错误');
+            }
+        }
+    </script>
+</body>
+</html>

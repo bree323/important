@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6];
+        // 栈方法 直接操作原数组
+        /* 
+            push: 从后面往数组中添加项，返回新数组的长度
+            pop: 从数组的后面删除一项, 返回被删除的项
+            unshift: 从前面往数组中添加项，返回新数组的长度
+            shift: 从数组的前面删除一项, 返回被删除的项
+        */
+        // 数组.push(项, 项1,...项n)
+        var l = arr.push('a', 'b', 'v');
+        console.log(l, arr);
+
+        var a = arr.pop();
+        console.log(a, arr);
+
+        // 数组.unshift(项, 项1,...项n);
+        arr.unshift('a', 'b', 'v');
+        console.log(arr);
+
+        var b = arr.shift();
+        console.log(b, arr);
+    </script>
+
+</body>
+
+</html>

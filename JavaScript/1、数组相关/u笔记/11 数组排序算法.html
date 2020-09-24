@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            选择排序: 每次取出来一个值和它后面的每一个值进行比较, 前面的比后面的大就互换位置
+        */
+        var arr = [4, 2, 3, 5, 6, 7, 1];
+        // for(var i = 0; i < arr.length; i++){
+        //     // 要比较的每一次的大项
+        //     for(var j = i + 1;j < arr.length; j++){
+        //         if(arr[i] > arr[j]){
+        //             // 位置互换
+        //             var temp = arr[i];
+        //             arr[i] = arr[j];
+        //             arr[j] = temp;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+        /* 
+            冒泡排序: 每次用相邻的两个值去进行比较, 如果说前面的比后面的大就互换位置, 每次排出最大的
+        */
+        for(var i = 0; i < arr.length; i++){
+            for(var j = 0; j < arr.length - i; j++){
+                if(arr[j] >arr[j+1]){
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>

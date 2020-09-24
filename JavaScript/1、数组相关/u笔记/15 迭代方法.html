@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            every: 对数组的每一项进行一些判断，如果每一个判断结果都为true，则最后返回结果为true  &&
+            some: 对数组的每一项进行一些判断，如果有一个判断结果为true，则最后返回结果为true, 所有的都是false, 才是返回false ||
+            filter: 对数组进行一个过滤, 将满足条件的数组的项拿出来，组成一个新数组返回回来
+            map: 对数组进行一次循环, map有返回值, 循环执行的函数返回的值所组成的数组
+            forEach: 对数组一个简单的循环
+        */
+        // 数组.every(function(value, index, array){})  
+        // index--下标 value---值  array--原数组
+        var arr = [1,2,3,4,5];
+        /* var res = arr.every(function(value, index, array){
+            console.log(index, value, array);
+            return value > 0;
+        }); */
+        // console.log(res);
+
+        /* var res1 = arr.some(function(value, index, array){
+            console.log(index, value, array);
+            return value > 5;
+        });
+        console.log(res1); */
+
+        //  数组.filter(function(value, index, array){})  
+        /* var res2 = arr.filter(function(value, index, array){
+            console.log(index, value, array);
+            return value > 1;
+        });
+        console.log(res2); */
+
+        // 数组.map(function(value, index, array){})
+       /*  var arr = [1,2,3,4,5];
+        var arr1 = arr.map(function(value){
+            console.log(value);
+            return value * value;
+        });
+        console.log(arr1); */
+
+        /* var arr2 = arr.forEach(function(value, index){
+            console.log(value, index);
+            return value * value;
+        });
+        console.log("???", arr2);  */// undefined
+    console.log(arr.map(item => ++item))
+    console.log(arr.filter(item => item<3))
+    
+    
+    //    arr.map
+    </script>
+</body>
+</html>

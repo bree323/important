@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    p:nth-child(1) {
+        background: pink;
+    }
+
+    p:nth-child(2) {
+        background: orange;
+    }
+</style>
+
+<body>
+    <p>当地时间周三，云视频会议服务商Zoom宣布将从下个月的测试版开始，允许视频会议软件用户对通话进行端到端加密——这项功能也不会局限于付费企业用户。Zoom表示，在最新版本中，无论是免费用户还是付费用户都可以使用加密功能，一旦有人想让传统电话线路或旧的会议室电话加入，任何会议管理员都有选择启用还是禁用它的权限。20天前，曾有媒体报道称，Zoom的视频通话加密计划只向付费用户提供，这一“双标”操作也引起了不小争议。
+    </p>
+    <p></p>
+    <script>
+        // 每次都截取第一个字添加到第二个p标签中，第二个字到最后的子显示在第一个p标签中
+        // 获取标签
+        var ps = document.getElementsByTagName('p');
+        console.log(ps[0].innerText);
+        console.log(ps[0].innerText.substring(0, 1));
+
+        // 开启定时器
+        var timer = setInterval(function () {
+            if(ps[0].innerText.length == 0){
+                // 清除定时器
+                clearInterval(timer);
+                // 后面不需要执行
+                return;
+            }
+            var f = ps[0].innerText.substring(0, 1);
+            var s = ps[0].innerText.substring(1);
+            console.log(s);
+            ps[1].innerText += f;
+            ps[0].innerText = s;
+        }, 100);
+    </script>
+</body>
+
+</html>

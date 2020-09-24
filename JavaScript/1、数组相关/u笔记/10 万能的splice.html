@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            增删改
+            数组.splice(起始下标, 要删除的个数, [要添加的值, 要添加的在值1...要添加的值n]);
+            被删除的项组成一个新数组返回回来; 没有删除的项时, 返回一个空数组
+        */
+        // 删除: 数组.splice(起始下标, 删除几个);
+        // 被删除的项组成一个新数组返回回来
+        var arr = ['亚索', '盖伦', '波尔'];
+        var a = arr.splice(1, 1);
+        console.log(a, arr);
+
+        // 添加: 数组.splice(起始下标, 删除几个, 要添加的值, 要添加的在值1...要添加的值n);
+        var b = arr.splice(1, 0, '凯瑟琳', '提莫');
+        console.log(b, arr); //  ["亚索", "凯瑟琳", "提莫", "波尔"]
+
+        // 修改: 数组.splice(起始下标, 删除几个, 要添加的值, 要添加的在值1...要添加的值n);
+        arr.splice(2, 2, '亚瑟', '庄周');
+        console.log(arr); //  ["亚索", "凯瑟琳", "亚瑟", "庄周"]
+    </script>
+</body>
+</html>

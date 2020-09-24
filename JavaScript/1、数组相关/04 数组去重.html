@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 数组去重</title>
+</head>
+
+<body>
+
+    <script>
+        let arr =  [1,1,'true','true',true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,'NaN', 0, 0, 'a', 'a',{},{}, {a:'a'},{a:"a"}, {b:'b'}];
+        console.log(typeof false+false)
+       // es6:最简单的去重方法，但是不能去重复的对象
+    // console.log([...new Set(arr)] )
+    // console.log(Array.from(new Set(arr)))
+       
+       //  方法1： 
+        let newarr = []
+        /*  for(var i = 0; i< arr.length; i++ ) {
+             if(newarr.indexOf(arr[i]) == -1 ) {
+                 newarr.push(arr[i])
+             }
+         } */
+
+        // 将for循环用forEach代替
+        /* arr.forEach(item => {
+            if(newarr.indexOf(item) == -1) {
+                newarr.push(item)
+            }
+        }) */
+
+        // console.log(newarr)
+
+        //   方法2： 用选择排序的的思想 ====> 每一项与其后的每一项逐一相比较
+        /* for(var i = 0; i < arr.length; i++) {
+            for(var j = i+1; j< arr.length; j++) {
+                if(arr[i] == arr[j] ) {    //判断是否每一项与后面的任意一项是否重复
+                     arr.splice(j, 1)     //把后面重复的那一项删除
+                     j--       
+                }
+            }
+        } */
+
+        // 方法3：用冒泡排序的思想 =====> 任意相邻的两项进行相比较    
+        /* for (var i = 0; i < arr.length; i++) {  //没循环一次i能找出一个不同的项，这个不同的项排在最后
+            for (var j = 0; j < arr.length - i -1; j++) {  
+                if (arr[j] == arr[j + 1]) {   // 如果两个相等，则删除后一项
+                    arr.splice(j + 1, 1)
+                    j-- 
+                } else {
+                       // console.log(arr[j], arr[j + 1])
+                         //不相等的两项，进行换位
+                        let temp = arr[j]
+                        arr[j] = arr[j + 1]
+                        arr[j + 1] = temp  
+                }
+            }
+        }
+        console.log(arr.sort((a,b) => a-b )) */
+
+
+
+        //  方法4：用快速排序的方法
+                /* function quick(arr) {
+        
+                    //    找到中间项
+                    let num = Math.floor(arr.length / 2)
+                    let numval = arr.splice(num, 1)
+        
+                    //   左右两空数组
+                    let leftarr = []     //存放相同的项
+                    // let numarr = []     //存放每一个中间项 最后与rightarr递归得到的仅一项的数组进行拼接 即为所求
+                    let rightarr = []    //存放不同的项
+        
+                    // 与中间项相同的项放左数组，不同的项放右数组
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i] == numval) {    //相同的项
+                            leftarr.push(arr[i])
+                        } else {   //不同的项
+                            rightarr.push(arr[i])
+                        }
+                    }
+                    //  中间项添加到numarr中，这个就是存放不重复项
+                    return {
+                        leftarr
+                        ,numval
+                        ,rightarr
+                    }
+        
+                }
+                // 右数组继续查重
+                let objarr = quick(arr)
+                let objarr1 = quick(objarr.rightarr)
+                let objarr2 = quick(objarr1.rightarr)
+                let objarr3 = quick(objarr2.rightarr)
+                console.table([objarr,objarr1,objarr2,objarr3]) */
+        //  console.log(arr)
+
+
+    // 利用hasOwnProperty   
+    function unique(arr) {
+    var obj = {};
+    return arr.filter(function(item, index, arr){
+        return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true)
+    })
+}
+        console.log(unique(arr))
+
+
+
+    
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

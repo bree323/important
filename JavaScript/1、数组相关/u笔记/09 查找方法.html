@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            indexOf: 从左往右, 字符串/数组.indexOf(要查找的字符, 起始下标);
+            lastIndexOf: 从右往左, 字符串/数组.lastIndexOf(要查找的字符, 起始下标);
+            如果找到返回对应的下标，如果找不到返回-1
+            数组查找的时候, 数组中的项必须和查找内容完全一致的情况下才能返回下标
+        */
+        var arr = [1,2,3,4,1,2,3,4];
+        console.log(arr.indexOf(3)); // 2
+        console.log(arr.indexOf('3')); // -1
+
+        console.log(arr.indexOf(3, 3)); // 6
+        console.log(arr.lastIndexOf(3)); // 6
+        console.log(arr.lastIndexOf(3, 5)); // 2
+
+        // 数组去重 遍历数组的每一项, 如果当前项在新数组中没有, 将当前项添加进去
+        var arr1 = []; // 存储不重复的项
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+            // 不存在新数组中的时候才能去添加
+            if(arr1.indexOf(arr[i]) == -1){
+                arr1.push(arr[i]);
+            }
+        }
+        console.log(arr1);
+
+        var my_arr = [1,2,3,2,1,2,2,3];
+        var my_new_arr = [];
+        for(var i = 0; i < my_arr.length; i++){
+            console.log("my", my_arr[i]);
+            if(my_new_arr.indexOf(my_arr[i]) == -1){
+                my_new_arr.push(arr[i]);
+            }
+        }
+        console.log(my_new_arr);
+        console.log(parseInt(-1.5));
+      
+    </script>
+</body>
+</html>
